@@ -7,3 +7,13 @@ before_install:
 # TEST SUITE
 script: 
   - docker run laboulejam/dockercra npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-3"
+  app: "docker-cra-laboulejam"
+  env: "Dockercralaboulejam-env"
+  bucket_name: "elasticbeanstalk-eu-west-3-966291604732"
+  bucket_path: "docker-cra-laboulejam"
+  on: 
+    branch: master
