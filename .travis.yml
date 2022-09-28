@@ -13,10 +13,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "eu-west-3"
-  app: "dockercra"
-  env: "Dockercra-env"
+  app: "dockercra2"
+  env: "Dockercra2-env"
   bucket_name: "elasticbeanstalk-eu-west-3-966291604732"
-  bucket_path: "dockercra"
+  bucket_path: "dockercra2"
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
   on: 
