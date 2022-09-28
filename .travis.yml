@@ -1,21 +1,21 @@
 sudo: required
 services:
   - docker
-before_install: 
-  - docker build -t laboulejam/dockercra -f Dockerfile.dev .
+# before_install: 
+#   - docker build -t laboulejam/dockercra -f Dockerfile.dev .
 
-# TEST SUITE
-script: 
-  - docker run -e CI=true laboulejam/dockercra npm run test -- --coverage
+# # TEST SUITE
+# script: 
+#   - docker run -e CI=true laboulejam/dockercra npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
   region: "eu-west-3"
-  app: "docker-cra-laboulejam"
-  env: "Dockercralaboulejam-env"
+  app: "dockercra"
+  env: "Dockercra-env"
   bucket_name: "elasticbeanstalk-eu-west-3-966291604732"
-  bucket_path: "docker-cra-laboulejam"
-  on: 
-    branch: master
+  bucket_path: "dockercra"
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
+  on: 
+    branch: master
